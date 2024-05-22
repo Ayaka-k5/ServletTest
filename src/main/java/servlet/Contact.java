@@ -25,9 +25,6 @@ public class Contact extends HttpServlet {
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
 
-        // デバッグメッセージ
-        System.out.println("POSTリクエストが受信されました");
-
         // contact.jspにフォワード
         request.getRequestDispatcher("/jsp/contact.jsp").forward(request, response);
     }
