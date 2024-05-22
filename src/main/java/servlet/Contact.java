@@ -23,9 +23,13 @@ public class Contact extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
-
-        // contact.jspにフォワード
-        request.getRequestDispatcher("/jsp/contact.jsp").forward(request, response);
+    	String user = request.getParameter("user");
+    	request.setAttribute("user", user);
+    	request.getRequestDispatcher("/jsp/contact.jsp").forward(request, response);
+    	
+//        request.setCharacterEncoding("UTF-8");
+//
+//        // contact.jspにフォワード
+//        request.getRequestDispatcher("/jsp/contact.jsp").forward(request, response);
     }
 }
